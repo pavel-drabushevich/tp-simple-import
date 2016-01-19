@@ -1,3 +1,10 @@
 ﻿exports.program = {
-	nameField: 'Program'
+    nameField: 'Program'
+};
+
+exports.project = {
+    nameField: 'Product',
+    programField: 'Program',
+    stateField: 'ProductState',
+    customFields: ['ProductType']
 };
