@@ -1,0 +1,17 @@
+{
+  "name": "import",
+  "version": "",
+  "description": "",
+  "private": true,
+  "dependencies": {
+    "async": "1.5.2",
+    "commander": "2.9.0",
+    "csv": "0.3.7",
+    "lodash": "4.0.0",
+    "progress": "^1.1.8",
+    "q": "1.4.1",
+    "restler": "3.4.0",
+    "restler-q": "0.1.1",
+    "winston": "2.1.1"
+  }
+}
