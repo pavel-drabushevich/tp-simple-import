@@ -4,7 +4,6 @@
   "description": "",
   "private": true,
   "dependencies": {
-    "async": "1.5.2",
     "commander": "2.9.0",
     "csv": "0.3.7",
     "lodash": "4.0.0",
