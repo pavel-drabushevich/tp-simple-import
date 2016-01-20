@@ -8,7 +8,6 @@ For example you can start import with following command
 
 ```
 node import.js -u http://targetprocess -t MTpGMjRERDMxODUzNDkasGHDsdQ0NEY4NkFFOEJCMjkzMw==
-
 ```
 
 Please open `<targetprocess_url>/api/v1/Authentication` page in your browser to get Targetprocess API token.
