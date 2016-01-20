@@ -1,6 +1,6 @@
-Simple [Node.js](https://nodejs.org) script to import entities from CSV files to [Targetprocess](https://targetprocess.com). Tested on v4.2.4.
+Simple [Node.js](https://nodejs.org) script to import entities from CSV files to [Targetprocess](https://targetprocess.com). Tested on Node.js v4.2.4.
 
-Please run `npm install` command to install dependencies
+Script uses several third party libraries, please run `npm install` command to install them.
 
 Script has several parametrs, run `node import.js -h` command to see help. Csv files paths options have default values, please see begining of [import.js](https://github.com/pavel-drobushevich/tp-simple-import/blob/master/import.js) and files in this repository. But Targetprocess url and api token are important.
 
