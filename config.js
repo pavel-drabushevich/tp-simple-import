@@ -2,15 +2,15 @@
 var mkStatesQuerySpec = entityTypeId => ({select: ['id', 'name'], where: {'process.isDefault': true, 'entityType.id': entityTypeId }})
 
 exports.program = {
-    nameColumn: 'Program',
+    nameColumn: 'Franchise',
     uniq: true
 };
 
 exports.project = {
-    nameColumn: 'Product',
+    nameColumn: 'Product / Program',
     uniq: true,
     linked: [
-        {entity: 'program', column: 'Program', querySpec: defaultQuerySpec},
+        {entity: 'program', column: 'Franchise', querySpec: defaultQuerySpec},
         {entity: 'entityState', column: 'Product State', querySpec: mkStatesQuerySpec(1)}
     ],
     customFields: [

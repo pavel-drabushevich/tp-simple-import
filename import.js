@@ -15,10 +15,7 @@ commander
     .version('0.0.1')
     .option('-u, --url [value]', 'Targetprocess url')
     .option('-t, --token [value]', 'Targetprocess api token')
-    .option('-p, --programs [value]', 'File with Programs')
-    .option('-pr, --projects [value]', 'File with Projects')
-    .option('-e, --epics [value]', 'File with Epics')
-    .option('-f, --features [value]', 'File with Features')
+    .option('-f, --file [value]', 'File with Projects')
     .parse(process.argv);
 
 var baseUrl = commander.url || 'http://localhost/targetprocess';
@@ -27,10 +24,7 @@ var apiV1Url = `${apiUrl}/v1`;
 var apiV2Url = `${apiUrl}/v2`;
 var token = commander.token || '';
 
-var programsFile = commander.programs || 'Portfolio_Programs.csv';
-var projectsFile = commander.projects || 'Portfolio_Projects.csv';
-var epicsFile = commander.epics || 'Portfolio_Epics.csv';
-var featuresFile = commander.features || 'Portfolio_Features.csv';
+var file = commander.file || 'Projects_List.csv';
 
 var logger = new (winston.Logger)({
     transports: [new (winston.transports.File)({filename: 'import.log'})]
@@ -140,12 +134,12 @@ var fixEpicStates = epicsFile => Q.allSettled([
     return Q.allSettled(entities);
 }));
 
-importEntities('programs', programsFile, config.program)
-    .then(() => importEntities('projects', projectsFile, config.project))
-    .then(() => importEntities('epics', epicsFile, config.epics))
-    .then(() => importEntities('features', featuresFile, config.features))
+importEntities('programs', file, config.program)
+    .then(() => importEntities('projects', file, config.project))
+    .then(() => importEntities('epics', file, config.epics))
+    .then(() => importEntities('features', file, config.features))
     // Fix epic states because they were reopend by TP due new open features
-    .then(() => fixEpicStates(epicsFile))
+    .then(() => fixEpicStates(file))
     .then(() => console.log('Completed!'))
     .catch(error => logger.log('error', `Some unexpected errors happend: ${error}`))
     .done();
